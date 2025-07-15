@@ -1529,7 +1529,7 @@ int charge_manager_get_override(void)
 	return override_port;
 }
 
-int charge_manager_get_active_charge_port(void)
+test_mockable int charge_manager_get_active_charge_port(void)
 {
 	int retval = 0;
 
