@@ -285,7 +285,6 @@ BOARDS_THAT_FAIL_WITH_CLANG = [
     "cerise",
     "cret",
     "munna",
-    "mushu",
     "volteer",
     "willow",
     # Not enough flash space with CONFIG_POWER_SLEEP_FAILURE_DETECTION enabled
@@ -301,7 +300,6 @@ BOARDS_THAT_FAIL_WITH_CLANG = [
     "juniper",
     "kodama",
     "krane",
-    "mushu",
     "makomo",
     "oak",
     "terrador",
