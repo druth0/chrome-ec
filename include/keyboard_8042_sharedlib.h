@@ -195,6 +195,8 @@ enum scancode_values {
 	SCANCODE_CTRL_BREAK = 0xe07e,
 };
 
+void simulate_keyboard(uint16_t scancode, int is_pressed);
+	
 #ifdef __cplusplus
 }
 #endif

@@ -14,6 +14,11 @@
  * Early banshee boards are not set up for vivaldi
  */
 #undef CONFIG_KEYBOARD_VIVALDI
+#define CONFIG_KEYBOARD_CUSTOMIZATION_COMBINATION_KEY
+#define CONFIG_KEYBOARD_PROTOCOL_8042
+#define CONFIG_SIMULATE_KEYCODE
+/* The Fn key function not ready yet undefined it until the function finish */
+#define CONFIG_KEYBOARD_SCANCODE_CALLBACK
 
 /* Baseboard features */
 #include "baseboard.h"
@@ -40,7 +45,6 @@
 /* KEYBOARD */
 #define CONFIG_KEYBOARD_MULTIPLE
 #define CONFIG_KEYBOARD_CUSTOMIZATION
-#define CONFIG_KEYBOARD_VIVALDI
 
 /* LED */
 #define CONFIG_LED_PWM_COUNT 2

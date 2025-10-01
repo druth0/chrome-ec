@@ -10,8 +10,8 @@
 
 /* Keyboard scan setting */
 __override struct keyboard_scan_config keyscan_config = {
-	.output_settle_us = 50,
-	.debounce_down_us = 9 * MSEC,
+	.output_settle_us = 80,
+	.debounce_down_us = 20 * MSEC,
 	.debounce_up_us = 30 * MSEC,
 	.scan_period_us = 3 * MSEC,
 	.stable_scan_period_us = 9 * MSEC,
@@ -23,54 +23,6 @@ __override struct keyboard_scan_config keyscan_config = {
 		0xff, 0xef  /* full set */
 	},
 };
-
-static const struct ec_response_keybd_config banshee_kb_id1 = {
-	.num_top_row_keys = 12,
-	.action_keys = {
-		TK_BACK,		/* T1 */
-		TK_FORWARD,		/* T2 */
-		TK_REFRESH,		/* T3 */
-		TK_FULLSCREEN,		/* T4 */
-		TK_OVERVIEW,		/* T5 */
-		TK_SNAPSHOT,		/* T6 */
-		TK_BRIGHTNESS_DOWN,	/* T7 */
-		TK_BRIGHTNESS_UP,	/* T8 */
-		TK_PLAY_PAUSE,		/* T9 */
-		TK_VOL_MUTE,		/* T10 */
-		TK_VOL_DOWN,		/* T11 */
-		TK_VOL_UP,		/* T12 */
-	},
-	.capabilities = KEYBD_CAP_SCRNLOCK_KEY,
-};
-
-static const struct ec_response_keybd_config banshee_kb_id2 = {
-	.num_top_row_keys = 12,
-	.action_keys = {
-		TK_BACK,		/* T1 */
-		TK_REFRESH,		/* T2 */
-		TK_FULLSCREEN,		/* T3 */
-		TK_OVERVIEW,		/* T4 */
-		TK_SNAPSHOT,		/* T5 */
-		TK_BRIGHTNESS_DOWN,	/* T6 */
-		TK_BRIGHTNESS_UP,	/* T7 */
-		TK_KBD_BKLIGHT_TOGGLE,	/* T8 */
-		TK_PLAY_PAUSE,		/* T9 */
-		TK_VOL_MUTE,		/* T10 */
-		TK_VOL_DOWN,		/* T11 */
-		TK_VOL_UP,		/* T12 */
-	},
-	.capabilities = KEYBD_CAP_SCRNLOCK_KEY,
-};
-
-BUILD_ASSERT(IS_ENABLED(CONFIG_KEYBOARD_VIVALDI));
-__override const struct ec_response_keybd_config *
-board_vivaldi_keybd_config(void)
-{
-	if (get_board_id() <= 1)
-		return &banshee_kb_id1;
-	else
-		return &banshee_kb_id2;
-}
 
 /*
  * Row Column info for Top row keys T1 - T15.
